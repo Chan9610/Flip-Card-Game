@@ -12,6 +12,7 @@ const totaltiming = document.getElementById("totaltiming");
 let counter = 0;
 let displaycounter = 0;
 let x = 0;
+let matchcounter =0;
 
 const images = ["AH.jpg", "AR.jpg", "AS.jpg", "CV.jpg", "DJ.jpg", "DR.webp", "AH.jpg", "AR.jpg", "AS.jpg", "CV.jpg", "DJ.jpg", "DR.webp"];
 const uniqueValues = [];
@@ -24,7 +25,7 @@ start.addEventListener("click", () => {
 
 })
 function screenthird(){
-    if(x===10){
+    if(x===60){
         numberofclicks.innerHTML= displaycounter;
 
         totaltiming.innerHTML= x;
@@ -68,6 +69,17 @@ frontImages.forEach((image) => {
             if (counter > 1) {
                 setTimeout(() => {
                     if (openPhoto[0].src === openPhoto[1].src) {
+                        matchcounter++
+                        if(matchcounter==6){
+                            numberofclicks.innerHTML= displaycounter;
+
+                            totaltiming.innerHTML= x;
+                    
+                            screen2.style.display = "none"
+                    
+                            screen3.style.display ="flex"
+                            screen3.classList.add("sc3")
+                        }
                         
                     }
                     else {

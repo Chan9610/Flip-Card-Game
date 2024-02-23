@@ -38,6 +38,9 @@
   margin: 5px;
 
 }
+#screen3{
+  display: none;
+}
 .sc3{
   height: 100vh;
   width: 100%;
